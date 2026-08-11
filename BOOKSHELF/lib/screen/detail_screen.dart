@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+﻿import 'package:flutter/material.dart';
 import '../data/mock_books.dart';
+import '../models/book.dart';
 import '../widgets/rating_badge.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -10,10 +10,54 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final book = mockBooks.firstWhere(
-      (b) => b.id == bookId,
-      orElse: () => mockBooks.first,
-    );
+    Book? book;
+    for (final item in mockBooks) {
+      if (item.id == bookId) {
+        book = item;
+        break;
+      }
+    }
+
+    if (book == null) {
+      return Scaffold(
+        appBar: AppBar(title: const Text('Livre introuvable')),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.error_outline,
+                  size: 72,
+                  color: Colors.redAccent,
+                ),
+                const SizedBox(height: 24),
+                const Text(
+                  'Livre non trouvé',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 12),
+                const Text(
+                  'L\'identifiant du livre est invalide ou le livre n\'existe plus.',
+                  style: TextStyle(fontSize: 16),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 24),
+                ElevatedButton(
+                  onPressed: () =>
+                      Navigator.of(context).popUntil((route) => route.isFirst),
+                  child: const Text('Retour à l\'accueil'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    final currentBook = book!;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -23,9 +67,9 @@ class DetailScreen extends StatelessWidget {
             Stack(
               children: [
                 Hero(
-                  tag: 'book-cover-${book.id}',
+                  tag: 'book-cover-${currentBook.id}',
                   child: Image.network(
-                    book.coverUrl,
+                    currentBook.coverUrl,
                     height: 350,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -38,7 +82,7 @@ class DetailScreen extends StatelessWidget {
                       backgroundColor: Colors.black45,
                       child: IconButton(
                         icon: const Icon(Icons.arrow_back, color: Colors.white),
-                        onPressed: () => context.pop(),
+                        onPressed: () => Navigator.of(context).pop(),
                       ),
                     ),
                   ),
@@ -56,24 +100,24 @@ class DetailScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          book.title,
+                          currentBook.title,
                           style: Theme.of(context).textTheme.headlineMedium
                               ?.copyWith(fontWeight: FontWeight.bold),
                         ),
                       ),
-                      RatingBadge(rating: book.rating),
+                      RatingBadge(rating: currentBook.rating),
                     ],
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Par ${book.author}',
+                    'Par ${currentBook.author}',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                   const SizedBox(height: 12),
                   Chip(
-                    label: Text('${book.pageCount} pages'),
+                    label: Text('${currentBook.pageCount} pages'),
                     avatar: const Icon(Icons.menu_book, size: 16),
                   ),
                   const Divider(height: 32),
@@ -85,7 +129,7 @@ class DetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    book.summary,
+                    currentBook.summary,
                     style: Theme.of(
                       context,
                     ).textTheme.bodyLarge?.copyWith(height: 1.5),
@@ -101,7 +145,7 @@ class DetailScreen extends StatelessWidget {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
-                              'Réservation confirmée pour "${book.title}" !',
+                              'Réservation confirmée pour "${currentBook.title}" !',
                             ),
                           ),
                         );
