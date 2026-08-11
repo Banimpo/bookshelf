@@ -5,7 +5,7 @@ import '../screen/detail_screen.dart';
 import '../screen/add_book_screen.dart';
 import '../screen/setting_screen.dart';
 
-GoRouter createRouter(ValueNotifier<ThemeMode> themeNotifier) {
+GoRouter createRouter() {
   return GoRouter(
     initialLocation: '/',
     routes: [
@@ -31,7 +31,7 @@ GoRouter createRouter(ValueNotifier<ThemeMode> themeNotifier) {
         path: '/settings',
         name: 'settings',
         builder: (context, state) =>
-            SettingsScreen(themeNotifier: themeNotifier),
+            const SettingsScreen(),
       ),
     ],
   );

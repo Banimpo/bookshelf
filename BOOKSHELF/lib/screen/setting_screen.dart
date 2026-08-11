@@ -1,32 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/theme_provider.dart';
 
-class SettingsScreen extends StatelessWidget {
-  final ValueNotifier<ThemeMode> themeNotifier;
-
-  const SettingsScreen({super.key, required this.themeNotifier});
+class SettingsScreen extends ConsumerWidget {
+  const SettingsScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final currentTheme = ref.watch(themeNotifierProvider);
+    final isDark = currentTheme == ThemeMode.dark;
+
     return Scaffold(
       appBar: AppBar(title: const Text('Paramètres')),
       body: ListView(
         children: [
-          ValueListenableBuilder<ThemeMode>(
-            valueListenable: themeNotifier,
-            builder: (context, currentTheme, _) {
-              final isDark = currentTheme == ThemeMode.dark;
-              return SwitchListTile(
-                title: const Text('Mode Sombre'),
-                subtitle: const Text(
-                  'Activer le thème sombre de l\'application',
-                ),
-                secondary: Icon(isDark ? Icons.dark_mode : Icons.light_mode),
-                value: isDark,
-                onChanged: (val) {
-                  themeNotifier.value = val ? ThemeMode.dark : ThemeMode.light;
-                },
-              );
-            },
+          SwitchListTile(
+            title: const Text('Mode Sombre'),
+            subtitle: const Text('Activer le thème sombre de l\'application'),
+            secondary: Icon(isDark ? Icons.dark_mode : Icons.light_mode),
+            value: isDark,
+            onChanged: (val) => ref.read(themeNotifierProvider.notifier).toggle(val),
           ),
           const Divider(),
           const ListTile(
