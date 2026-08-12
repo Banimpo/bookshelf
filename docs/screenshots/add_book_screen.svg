@@ -1,0 +1,15 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="960" fill="#F5F7FC"/>
+  <rect x="100" y="80" width="1080" height="800" rx="28" fill="white" stroke="#E6EAF3"/>
+  <text x="170" y="150" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#2C2F3A">Ajouter un livre</text>
+  <rect x="170" y="220" width="820" height="64" rx="16" fill="#F1F4FB"/>
+  <rect x="170" y="332" width="820" height="64" rx="16" fill="#F1F4FB"/>
+  <rect x="170" y="444" width="820" height="64" rx="16" fill="#F1F4FB"/>
+  <rect x="170" y="556" width="820" height="64" rx="16" fill="#F1F4FB"/>
+  <text x="192" y="259" font-family="Arial, sans-serif" font-size="20" fill="#6B7280">Titre du livre</text>
+  <text x="192" y="371" font-family="Arial, sans-serif" font-size="20" fill="#6B7280">Auteur</text>
+  <text x="192" y="483" font-family="Arial, sans-serif" font-size="20" fill="#6B7280">Nombre de pages</text>
+  <text x="192" y="595" font-family="Arial, sans-serif" font-size="20" fill="#6B7280">Genre</text>
+  <rect x="170" y="690" width="820" height="68" rx="18" fill="#6B5AE8"/>
+  <text x="450" y="733" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="white">Enregistrer</text>
+</svg>

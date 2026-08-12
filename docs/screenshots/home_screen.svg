@@ -1,0 +1,26 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="960" fill="#F5F7FB"/>
+  <rect x="60" y="60" width="1160" height="840" rx="28" fill="white" stroke="#E6EAF3"/>
+  <rect x="110" y="110" width="240" height="40" rx="12" fill="#EEF1FF"/>
+  <text x="145" y="136" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#2F2F46">BookShelf</text>
+  <rect x="110" y="180" width="1060" height="58" rx="16" fill="#F0F3F9"/>
+  <circle cx="145" cy="209" r="12" fill="#9AA7C7"/>
+  <rect x="170" y="198" width="250" height="22" rx="8" fill="#D9E0F0"/>
+  <rect x="110" y="270" width="1060" height="44" rx="14" fill="#F7F4FF"/>
+  <rect x="128" y="282" width="82" height="20" rx="10" fill="#6B5AE8"/>
+  <rect x="222" y="282" width="90" height="20" rx="10" fill="#E7E7F6"/>
+  <rect x="324" y="282" width="96" height="20" rx="10" fill="#E7E7F6"/>
+  <rect x="432" y="282" width="86" height="20" rx="10" fill="#E7E7F6"/>
+  <rect x="110" y="340" width="320" height="360" rx="26" fill="#F3F5FA"/>
+  <rect x="150" y="370" width="240" height="210" rx="18" fill="#DDE8FF"/>
+  <rect x="150" y="596" width="120" height="14" rx="7" fill="#3B4257"/>
+  <rect x="150" y="622" width="160" height="12" rx="6" fill="#A4AEC0"/>
+  <rect x="470" y="340" width="320" height="360" rx="26" fill="#F3F5FA"/>
+  <rect x="510" y="370" width="240" height="210" rx="18" fill="#EDE4FF"/>
+  <rect x="510" y="596" width="130" height="14" rx="7" fill="#3B4257"/>
+  <rect x="510" y="622" width="170" height="12" rx="6" fill="#A4AEC0"/>
+  <rect x="830" y="340" width="320" height="360" rx="26" fill="#F3F5FA"/>
+  <rect x="870" y="370" width="240" height="210" rx="18" fill="#EAF5EA"/>
+  <rect x="870" y="596" width="120" height="14" rx="7" fill="#3B4257"/>
+  <rect x="870" y="622" width="170" height="12" rx="6" fill="#A4AEC0"/>
+</svg>

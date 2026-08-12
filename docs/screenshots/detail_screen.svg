@@ -1,0 +1,19 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="960" fill="#F2F5FA"/>
+  <rect x="70" y="70" width="1140" height="820" rx="26" fill="white" stroke="#E7EBF3"/>
+  <rect x="70" y="70" width="1140" height="300" rx="26" fill="#D9E6FF"/>
+  <circle cx="130" cy="120" r="24" fill="#2F2F46" fill-opacity="0.45"/>
+  <path d="M145 120L120 120" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <path d="M130 105L115 120L130 135" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="110" y="430" width="420" height="28" rx="10" fill="#2A2D36"/>
+  <rect x="110" y="480" width="260" height="18" rx="9" fill="#A2AFC2"/>
+  <rect x="110" y="520" width="610" height="18" rx="9" fill="#C6CEDC"/>
+  <rect x="110" y="551" width="560" height="18" rx="9" fill="#C6CEDC"/>
+  <rect x="110" y="582" width="500" height="18" rx="9" fill="#C6CEDC"/>
+  <rect x="110" y="645" width="210" height="44" rx="12" fill="#6B5AE8"/>
+  <text x="175" y="674" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="white">Réserver</text>
+  <rect x="820" y="430" width="200" height="54" rx="18" fill="#FBE7A7"/>
+  <text x="876" y="465" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#544100">4.8 ★</text>
+  <rect x="820" y="500" width="170" height="28" rx="14" fill="#E8EEF8"/>
+  <text x="860" y="521" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#3E4A68">159 pages</text>
+</svg>

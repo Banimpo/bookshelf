@@ -1,35 +1,75 @@
-# 📚 BookShelf — Application Flutter de Gestion de Livres
+# 📚 BookShelf
 
-**BookShelf** est une application Flutter multi-écrans (Mobile & Tablette) permettant d'explorer une collection de livres, d'effectuer des recherches/filtrages par genre, de consulter les détails d'un ouvrage et d'en enregistrer de nouveaux.
+BookShelf est une application Flutter de gestion de bibliothèque, pensée pour explorer un catalogue de livres, filtrer et rechercher rapidement, consulter les détails d’un ouvrage et ajouter de nouveaux titres.
 
----
+## ✨ Fonctionnalités
 
-## 🎯 Fonctionnalités Principales
+- Catalogue avec recherche par titre ou auteur
+- Filtre par genre
+- Écran détaillé avec passage d’identifiant via GoRouter
+- Formulaire d’ajout avec validation sur plusieurs champs
+- Thème clair/sombre configurable
+- Interface responsive adaptée mobile et tablette
+- Architecture séparée entre donnée, modèles et widgets
 
-- **Catalogue & Recherche (`HomeScreen`)** : Recherche dynamique par titre/auteur et filtrage par genres (Roman, Essai, Conte, SF).
-- **Fiche Détaillée (`DetailScreen`)** : Affichage des informations complètes du livre avec passage de paramètres via `GoRouter`.
-- **Formulaire d'Ajout (`AddBookScreen`)** : Formulaire interactif avec validation sur au moins 3 champs (Titre, Auteur, Nb de pages).
-- **Gestion du Thème (`SettingsScreen`)** : Basculement dynamique entre Thème Clair et Thème Sombre.
-- **Interface Responsive** : Adaptation automatique du nombre de colonnes de la grille selon la taille de l'écran (Mobile vs Tablette via `LayoutBuilder`).
+## 📱 Écrans principaux
 
----
+- Accueil : recherche et liste des livres
+- Détail : fiche complète d’un livre
+- Ajouter : formulaire de saisie et validation
+- Paramètres : activation du thème sombre
 
-## 🛠️ Architecture Technique
+## 🖼️ Captures d’écran
 
-- **Navigation** : `GoRouter` avec routes nommées (`/`, `/book/:id`, `/add`, `/settings`).
-- **State Management léger** : `ValueNotifier` pour la gestion globale du mode sombre.
-- **Séparation UI/Données** : Modèle de données strict (`models/book.dart`) et mock-data séparée (`data/mock_books.dart`).
-- **Widgets Réutilisables (`widgets/`)** :
-  - `BookCard` (Carte produit avec effet `Hero`)
-  - `GenreChip` (Filtre par catégorie)
-  - `RatingBadge` (Badge de note)
-- **Widgets Flutters intégrés** : `GridView`, `ListView`, `Stack`, `Hero`, `Form`, `TextFormField`, `DropdownButtonFormField`, `SwitchListTile`, `LayoutBuilder`, `Card`.
+Voir le dossier [docs/screenshots](docs/screenshots/README.md) pour les visuels de l’application.
 
----
+## 🏗️ Stack technique
 
-## 🚀 Installation & Lancement
+- Flutter
+- Dart
+- GoRouter pour la navigation
+- Riverpod pour la gestion du thème
+- Widgets réutilisables dans le dossier widgets
 
-1. **Cloner le projet :**
+## 📁 Structure du projet
+
+- [BOOKSHELF/lib](BOOKSHELF/lib) : code applicatif
+- [BOOKSHELF/lib/screen](BOOKSHELF/lib/screen) : écrans
+- [BOOKSHELF/lib/widgets](BOOKSHELF/lib/widgets) : composants réutilisables
+- [BOOKSHELF/lib/data](BOOKSHELF/lib/data) : données mockées
+- [BOOKSHELF/lib/models](BOOKSHELF/lib/models) : modèles de données
+- [BOOKSHELF/lib/routes](BOOKSHELF/lib/routes) : configuration des routes
+- [docs/screenshots](docs/screenshots) : captures d’écran
+
+## 🚀 Lancement
+
+1. Installer Flutter et le SDK Dart.
+2. Cloner le dépôt :
    ```bash
-   git clone [https://github.com/TON_USERNAME/bookshelf.git](https://github.com/TON_USERNAME/bookshelf.git)
+   git clone https://github.com/Banimpo/bookshelf.git
    cd bookshelf
+   cd BOOKSHELF
+   ```
+3. Récupérer les dépendances :
+   ```bash
+   flutter pub get
+   ```
+4. Lancer l’application :
+   ```bash
+   flutter run
+   ```
+
+## ✅ Vérification
+
+Le projet inclut une base de tests Flutter et la commande suivante a bien été vérifiée :
+
+```bash
+cd BOOKSHELF
+flutter test
+```
+
+Résultat attendu : tous les tests passent.
+
+## 📝 Remarques
+
+Ce dépôt est prêt pour la publication GitHub avec une documentation minimale mais exploitable. Les captures peuvent être remplacées par des captures réelles si tu souhaites publier une version plus aboutie.
